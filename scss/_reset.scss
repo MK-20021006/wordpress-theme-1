@@ -1,0 +1,311 @@
+// リセットCSS
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+	display: block;
+}
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+[hidden],
+template {
+	display: none;
+}
+a {
+	background: transparent;
+}
+a:focus {
+	outline: thin dotted;
+}
+a:active,
+a:hover {
+	outline: 0;
+}
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+.strong,
+.bold,
+b,
+strong {
+	font-weight: 700;
+}
+.em,
+dfn,
+em {
+	font-style: italic;
+}
+
+p {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+	-webkit-hyphenate-before: 2;
+	-webkit-hyphenate-after: 3;
+}
+code,
+kbd,
+pre,
+samp {
+	font-family: Consolas, Courier New, Courier, Monaco, monospace;
+}
+code,
+kbd,
+samp {
+	font-size: 95%;
+	padding: .05em .4em;
+	border-radius: 3px;
+	background: #f6f6f6;
+	color: #444;
+}
+pre {
+	white-space: pre-wrap;
+	margin: 0;
+}
+q {
+	quotes: "\201C" "\201D" "\2018" "\2019";
+}
+q:after,
+q:before {
+	content: '';
+	content: none;
+}
+.small,
+small,
+sub,
+sup {
+	font-size: 75%;
+}
+sub,
+sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -.5em;
+}
+sub {
+	bottom: -.25em;
+}
+figcaption {
+	font-size: 80%;
+	text-align: center;
+	opacity: 0.9;
+}
+dl,
+menu,
+ol,
+ul {
+	margin: 0 0 1em;
+}
+
+dt {
+	font-weight: 700;
+	margin: 1% 0;
+}
+
+dd {
+	margin: 0;
+}
+dt + dd {
+	margin: 0.5em 0;
+}
+
+menu {
+	padding: 0 0 0 40px;
+}
+ol,
+ul {
+	padding: 0;
+}
+li {
+	list-style-type: none;
+}
+img,
+svg {
+	border: 0;
+	vertical-align: bottom;
+	max-width: 100%;
+	height: auto;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+figure {
+	margin: 0;
+}
+.field,
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+	display: block;
+	padding: 10px 2%;
+	font-size: 1em;
+	color: var(--main-text-color);
+	background-color: var(--inner-content-bg);
+	border: 3px solid rgba(66, 66, 66, .3);
+	box-sizing: border-box;
+	width: auto;
+	max-width: 100%;
+	appearance: none;
+	border-radius: 4px;
+}
+
+input[type=password] {
+	letter-spacing: .3em;
+}
+textarea {
+	min-height: 90pt;
+	width: 100%;
+	overflow: auto;
+	vertical-align: top;
+}
+select {
+	appearance: none;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="5"><path d="M0,0 10,0 5,5z" fill="var(--main-text-color)" /></svg>');
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+fieldset {
+	border: 1px solid silver;
+	margin: 0 2px;
+	padding: .35em .625em .75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+button,
+input,
+select,
+textarea {
+	margin: 0;
+}
+button,
+input {
+	line-height: normal;
+}
+button,
+select {
+	
+	appearance: none;
+	text-transform: none;
+}
+select::-ms-expand {
+	display: none;
+}
+select {
+	line-height: 1.2;
+}
+button,
+html input[type="button"],
+input[type=reset],
+input[type=submit] {
+	appearance: button;
+	cursor: pointer;
+	font-size: .95em;
+	padding: 8px 20px;
+	background: #666;
+	color: #fff;
+	border: 0;
+	border-radius: 3px;
+}
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+input[type=checkbox],
+input[type=radio] {
+	box-sizing: border-box;
+	padding: 0;
+}
+input[type=search] {
+	appearance: none;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.image-replacement,
+.ir {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.cf,
+.comment-respond,
+.widget li {
+	zoom: 1;
+}
+.cf:after,
+.cf:before,
+.comment-respond:after,
+.comment-respond:before {
+	content: "";
+	display: table;
+}
+.cf:after,
+.comment-respond:after {
+	clear: both;
+}
+#submit,
+.blue-btn {
+	display: inline-block;
+	position: relative;
+	font-size: 90%;
+	font-weight: 400;
+	padding: 1em;
+	border-radius: 3px;
+	border: 0;
+	cursor: pointer;
+	transition: background-color .14s ease-in-out;
+}
+#submit,
+#submit:focus,
+#submit:hover,
+.blue-btn {
+	text-decoration: none;
+	color: #fff;
+}

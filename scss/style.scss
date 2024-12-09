@@ -1,0 +1,67 @@
+
+/******************************************************************
+Theme Name: stork19
+Theme URI: https://open-cage.com/stork19/
+Description: ストークの最新モデル。誰が使っても美しいデザインのサイトがつくれます。使い方は<a href="https://www.stork19.com/document" target="_blank">ドキュメント</a>をご覧ください。
+Version: 5.4
+Author: opencage
+Author URI: https://open-cage.com/
+License: GNU General Public License
+License URI: licence.txt
+******************************************************************/
+
+
+$stk-facebook-color: #1f6aba;
+$stk-hatebu-color: #2f70be;
+$stk-line-color: #25af00;
+$stk-pocket-color: #ec2136;
+$stk-instagram-color: #b900b4;
+$stk-instagram-color-gradient: linear-gradient(-135deg,#1400c8,#b900b4,#f50000);
+$stk-pinterest-color: #e60023;
+$stk-youtube-color: #ff0000;
+$stk-feedly-color: #5fd043;
+$stk-twitter-color: #2a2a2a;
+$stk-twitter-blue: #00acee;
+
+// リセットCSS
+@import "reset.scss";
+
+// commmon css
+@import "common.scss";
+
+// ヘッダー関連のSCSS
+@import "header.scss";
+
+// コンテンツ関連のSCSS
+@import "content.scss";
+
+// ヘッダーアイキャッチ、ピックアップコンテンツ関連
+@import "homeheader.scss";
+
+// ショートコード関係
+@import "shortcode.scss";
+
+// アーカイブ関連のSCSS
+@import "archives.scss";
+
+// ウィジェット関連のSCSS
+@import "widget.scss";
+
+// モーダルJS関係
+@import "remodal.scss";
+
+// ポップアップブロック
+@import "popup.scss";
+
+// フッター関係
+@import "footer.scss";
+
+
+// Text meant only for screen readers.
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}

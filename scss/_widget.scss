@@ -1,0 +1,510 @@
+// ==================================================
+// widget
+// ==================================================
+
+.widget:not(.widget_text):not(.widget_recent_comments):not(.widget_calendar):not(.widget_stk_profilewidget) {
+	a {
+		text-decoration: none;
+		color: inherit;
+		
+		&:hover {
+			color: inherit;
+			opacity: 0.7;
+		}
+	}
+}
+
+
+.widgettitle {
+	font-size: 100%;
+	padding: 0.65em 0.8em;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: var(--main-ttl-bg);
+	color: var(--main-ttl-color);
+	border-radius: var(--stk-wttl-border_radius, 0);
+}
+.widget_text,
+.widget_search,
+.widget_media_video,
+.widget_media_image,
+.widget_media_gallery {
+	.widgettitle {
+		margin-bottom: 1em;
+	}
+}
+
+.homeaddtop .widget:last-child,
+.titleunder .widget:last-child {
+	margin-bottom: var(--stk-margin, 1.6em);
+}
+.widget {
+	margin: 0 0 2.5em;
+	ul {
+		margin: 0;
+	}
+}
+
+// RSSウィジェット
+
+.widget_rss li {
+	a {
+		font-weight: 700;
+	}
+	.rssSummary,
+	.rss-date,
+	cite {
+		font-size: 88%;
+		opacity: 0.6;
+	}
+}
+
+
+// ウィジェットカテゴリー・新着記事
+
+.widget_categories ul,
+.widget_recent_entries__ul,
+.widget_newentryimagewidget .cat_postlist__ul,
+.widget_nav_menu ul,
+.widget_pages ul,
+.widget_archive ul,
+.widget_mycategoryorder ul {
+	margin-top: 0;
+}
+.widget_categories .cat-item,
+.widget_recent_entries__li,
+.widget_newentryimagewidget .cat_postlist__li,
+.widget_nav_menu .menu-item,
+.widget_pages .page_item,
+.widget_archive li,
+.widget_mycategoryorder li,
+.ul__g_nav ul li {
+	border-bottom: 1px dotted var(--oc-base-border-color);
+	margin: 0;
+	padding: 0;
+}
+.widget .children li:first-child,
+.widget .sub-menu li:first-child {
+	border-top: 1px dotted var(--oc-base-border-color);
+}
+
+.widget_categories .cat-item a,
+.widget_recent_entries__link,
+.widget_newentryimagewidget a,
+.widget_nav_menu .menu-item a,
+.widget_pages .page_item a,
+.widget_archive li a,
+.widget_mycategoryorder li a,
+.ul__g_nav ul li a {
+	display: block;
+	padding: 1em 1.3em 1em 0.3em;
+	margin: 0;
+	position: relative;
+}
+
+.widget li a .countpost {
+	opacity: 0.9;
+	border-radius: 1em;
+	background: rgba(50, 50, 50, 0.1);
+	font-size: 89%;
+	padding: 0 0.5em;
+	margin-left: 0.3em;
+}
+.widget_categories .cat-item,
+.widget_recent_entries__li,
+.widget_newentryimagewidget .cat_postlist__li,
+.widget_nav_menu .menu-item,
+.widget_pages .page_item,
+.widget_archive li,
+.widget_mycategoryorder li,
+.ul__g_nav ul li {
+	&:last-child {
+		border-bottom: none;
+	}
+	a::after {
+		font-family: var(--stk-font-awesome-free, "Font Awesome 5 Free");
+		font-weight: 700;
+		content: '\f105';
+		position: absolute;
+		right: 6px;
+		line-height: 1;
+		font-size: 1em;
+		top: 50%;
+		margin-top: -0.5em;
+		transition: 0.15s ease-in-out;
+		color: var(--main-link-color);
+	}
+}
+
+// widget用にタイトルサイズやウェイトを修正
+.cat_postlist.mode_widget {
+	.ttl {
+		font-size: 100%;
+		font-weight: 400;
+	}
+	.archives_post__meta {
+		padding-right: 1.2em;
+	}
+	.cat_postlist__link {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+}
+
+.entry-content .widget:not(.widget_text) li{
+	padding-left: 0;
+	margin: 0;
+	&::before {
+		content: none;
+	}
+}
+.widget li a:hover::after {
+	right: 3px;
+}
+
+// ドロップダウンスタイルの変更
+
+.widget select {
+	margin-top: 1em;
+	width: 100%;
+	// max-width: 100%;
+}
+
+// ドロップダウンにした時のlabelを非表示
+
+.widget_categories label,
+.widget_archive label {
+	display: none;
+}
+
+// リスト 下の階層
+
+.widget_nav_menu .sub-menu,
+.widget_pages .children,
+.widget_categories .children {
+	padding: 0;
+	margin: 0;
+	background: rgba(125, 125, 125, 0.02);
+
+	a::before {
+		font-family: var(--stk-font-awesome-free, "Font Awesome 5 Free");
+		font-weight: 700;
+		content: "\f0da";
+		display: inline-block;
+		margin-right: 5px;
+		opacity: 0.15;
+	}
+
+	a::after {
+		content: none;
+	}
+}
+
+
+.widget_nav_menu .sub-menu .sub-menu,
+.widget_pages .children .children,
+.widget_categories .children .children {
+
+	a {
+		padding-left: 1.6em;
+	}
+}
+
+
+.widget_nav_menu .sub-menu li a,
+.widget_pages .children .page_item a {
+	padding-left: 0.5em;
+}
+.widget_recent_comments ul {
+	margin-top: 0;
+}
+.widget_recent_comments .recentcomments {
+	border-bottom: 1px dotted #ccc;
+	border-bottom: 1px dotted rgba(0, 0, 0, .2);
+	margin: 0;
+	padding: 0.5em 0;
+}
+.widget_recent_comments .recentcomments {
+	&:first-child {
+		border-top: none;
+	}
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+// ウィジェット検索フォーム
+// blockの検索
+.wp-block-search {
+	.wp-block-search__label {
+		display: block;
+	}
+	.wp-block-search__input {
+		display: initial;
+	}
+}
+
+
+.svgicon_searchform {
+	width: 1em;
+	height: 1em;
+}
+.searchform {
+	position: relative;
+	height: 50px;
+	margin: 0 auto 1.5em;
+	max-width: 500px;
+	text-align: center;
+	
+
+	.searchform_input {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		padding: 12px 40px 12px 2%;
+		margin: 0;
+		font-size: 16px;
+	}
+	
+	.searchsubmit {
+		position: absolute;
+		right: 3px;
+		border: 0;
+		background: none;
+		color: initial;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		padding: 1em .6em;
+		font-size: 140%;
+	}
+}
+
+
+
+// ウィジェット カレンダー
+
+.widget_calendar .wp-calendar-table {
+	width: 100%;
+}
+.widget_calendar .wp-calendar-table,
+.widget_calendar .wp-calendar-table th,
+.widget_calendar .wp-calendar-table td,
+.widget_calendar .wp-calendar-nav {
+	text-align: center;
+}
+
+// タグクラウド
+.tagcloud, .wp-block-tag-cloud {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6em;
+}
+.tagcloud {
+	padding-top: 0.6em;
+}
+
+.tag-cloud-link, .wp-block-tag-cloud a {
+	padding: 0.5em 0.6em;
+	display: inline-block;
+	line-height: 1;
+	font-size: 12px!important;
+	text-decoration: none;
+	border-radius: 3px;
+	color: inherit;
+	box-shadow: 0 0 1px;
+	opacity: 0.8;
+
+	&::before {
+		font-family: var(--stk-font-awesome-free, "Font Awesome 5 Free");
+		font-weight: 700;
+		content: '\f02b';
+		margin-right: 3px;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.tag-cloud-link:hover {
+		opacity: 0.7;
+		box-shadow: 0 0 5px;
+	}
+	.tag-cloud-link:active {
+		box-shadow: 0 0 2px;
+	}
+
+}
+
+.widget_nav_menu .menu-item a .gf {
+	display: none;
+}
+
+.widget li .time__date {
+	padding: 0 0.3em;
+	font-size: 0.9em;
+	opacity: .5;
+	display: inline-block;
+}
+
+// CategoryWidget Toggle Ver
+
+.widget_categories .cat-item,
+.widget_nav_menu .menu-item,
+.widget_pages .page_item {
+	position: relative;
+}
+.widget li.accordionMenu > a {
+	padding-right: 2em;
+}
+.widget li.accordionMenu > a::after {
+	content: none;
+}
+.accordionBtn {
+	width: 2.2em;
+	height: 2.2em;
+	line-height: 2.2em;
+	border-radius: 50%;
+	display: inline-block;
+	text-align: center;
+	position: absolute;
+	top: 0.75em;
+	right: 1px;
+	color: #ffffff;
+	background-color: var(--main-link-color);
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+.accordionBtn.active {
+	background-color: var(--main-link-color-hover);
+}
+.accordionBtn::before {
+	font-weight: 700;
+	content: '＋';
+	display: inline-block;
+}
+.accordionBtn.active {
+	transform: rotate(45deg);
+}
+@media only screen and (min-width: 768px) {
+	.accordionBtn {
+		width: 1.9em;
+		height: 1.9em;
+		line-height: 1.9em;
+		top: 1em;
+	}
+}
+
+// Google Programmable Search Engine
+.gsc-search-button svg {
+	max-width: inherit;
+}
+
+// 固定フッターウィジェット
+#before-footer {
+	margin-bottom: 0;
+	padding: min(4%, 1em);
+	border-top: 1px solid #eee;
+	background: rgba(250, 250, 250, .9);
+	width: 100%;
+
+	&.footer-fixed {
+		position: sticky;
+		bottom: 0;
+		backdrop-filter: blur(12px);
+		max-height: 50vh;
+		overflow: hidden;
+		transform: translateY(100%);
+		
+		&.pt-active {
+			transform: translateY(0);
+			transition: transform .2s ease-out;
+		}
+		&:not(.pt-active) {
+			bottom: 0 !important;
+		}
+
+		@media not screen and (min-width: 768px) {
+			z-index: 1;
+		}
+	}
+
+	.inner {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1em;
+
+		.widget {
+			width: 100%;
+			margin: 0;
+
+			&.widget_media_image {
+				text-align: center;
+			}
+			
+			img.banner-big {
+				width: 728px;//728×90
+			}
+			img.banner-mobile {
+				width: 300px;//300×50
+			}
+		}
+
+		//@media only screen and (min-width: 768px) {
+			//&:has(> :nth-child(2)) .widget {
+			//	width: calc(50% - 0.5em);
+			//}
+			//&:has(> :nth-child(3)) .widget {
+			//	width: calc(33.33% - 0.666em);
+			//}
+			//&:has(> :nth-child(4)) .widget {
+			//	width: calc(25% - 0.75em);
+			//}
+		//}
+	}
+
+	& + #breadcrumb {
+		border-top: 1px solid #f5f5f5;
+	}
+}
+
+// 固定フッターウィジェットの非表示ボタン
+.btn-bf-close {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+	display: none;
+	background: hsla(0, 0%, 40%, .5);
+	width: min(8vw, 32px);
+	height: min(8vw, 32px);
+	line-height: min(8vw, 32px);
+	border-radius: 0 3px 0 0;
+	text-align: center;
+	padding: 0;
+	color: #fff;
+	cursor: pointer;
+
+	&::before {
+		font-family: var(--stk-font-awesome-free, "Font Awesome 5 Free");
+		content: "\f00d";
+		font-weight: 700;
+	}
+	
+	&.pt-active.--is-active {
+		display: block;
+	}
+}
+
+.bf-position-static,
+.bf-position-static:checked + .btn-bf-close {
+	display: none;
+}
+.bf-position-static:checked + .btn-bf-close + #before-footer.footer-fixed {
+	position: static;
+}
+
+// ウィジェットエリアのガイド
+.stk_adminEdit {
+	opacity: 0.7;
+}

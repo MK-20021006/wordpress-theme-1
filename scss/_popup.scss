@@ -1,0 +1,198 @@
+// ==================================================
+// popup style
+// ==================================================
+
+.oc-modal {
+	margin: 0 0 var(--stk-margin);
+}
+
+// ラベルデザイン
+.oc-modal__label {
+	font-weight: 700;
+	cursor: pointer;
+
+	&::before {
+		font-family: var(--stk-font-awesome-free, "Font Awesome 5 Free");
+		content: "\f0fe";
+		margin-right: 0.3em;
+		display: inline-block;
+		transition: transform 0.3s;
+	}
+	@media only screen and (min-width: 768px) {
+		&:hover {
+			opacity: 0.8;
+			transform: translateX(2px);		
+			&::before {
+				transform: scale(1.25)
+			}
+		}
+	}
+}
+.modal-label--btn_outline,
+.modal-label--border {
+	.oc-modal__label::before {
+		font-weight: 400;
+	}
+}
+
+.modal-label--simple,
+.modal-label--border {
+	.oc-modal__label {
+		color: var(--main-text-color);
+		display: inline-block;
+	}
+}
+
+.modal-label--border {
+	text-align: center;
+
+	.oc-modal__label {
+		font-size: 90%;
+		padding: calc(0.667em / 3) 0.9em;
+		border: 1px solid;
+		border-radius: 3px;
+
+		@media only screen and (min-width: 768px) {
+			&:hover {
+				transform: translateY(-2px);
+			}
+		}
+	}
+}
+
+.modal-label--btn_fill,
+.modal-label--btn_outline {
+	display: flex;
+	justify-content: center;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.modal-label--btn_fill .oc-modal__label,
+.modal-label--btn_outline .oc-modal__label {
+	padding: 0.667em 1em;
+	min-width: 220px !important;
+	text-align: center;
+	border-radius: 3px;
+
+	@media only screen and (min-width: 768px) {
+		&:hover {
+			//opacity: 0.8;
+			transform: translate3d(0, -3px, 0);
+			box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+		}
+	}
+}
+
+.modal-label--btn_fill .oc-modal__label {
+	padding: calc(0.667em + 2px) calc(1em + 2px);
+	color: #fff;
+	background-color: var(--main-link-color);
+}
+.modal-label--btn_outline .oc-modal__label {
+	color: var(--main-link-color);
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--main-link-color);
+}
+
+// ボックス
+.remodal {
+	&.oc-modal__content {
+		color: var(--main-text-color);
+		padding: 4% 4% 0;
+		max-width: calc(100% - 40px);
+		margin: 20px 0;
+
+		@media only screen and (min-width: 981px) {
+			padding: 32px 32px 0;
+		}
+		// 幅広・全幅は解除
+		.alignfull,.alignwide {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	// 角丸
+	&.modal-box--radius {
+		border-radius: 16px;
+	}
+	// フレーム
+	&.modal-box--frame {
+		padding: 8px 8px 0;
+		border-radius: 4px;
+	}
+	// 余白なし
+	&.modal-box--paddingnone {
+		padding: 0;
+
+		.remodal-close {
+			justify-content: center;
+			position: absolute;
+			left: 0;
+			right: 0;
+			color: #fff;
+		}
+	}
+
+	// ボックスサイズ
+	@media only screen and (min-width: 981px) {
+		// 小さめ
+		&.modal-size--small {
+			&:not(.modal-box--paddingnone):not(.modal-box--frame) {
+				max-width: calc(600px + 64px);
+			}
+			&.modal-box--frame {
+				max-width: calc(600px + 16px);
+			}
+			&.modal-box--paddingnone {
+				max-width: 600px;
+			}
+		}
+		// 標準
+		&.modal-size--medium {
+			&:not(.modal-box--paddingnone):not(.modal-box--frame) {
+				max-width: calc(var(--stk-main-width) + 64px);
+			}
+			&.modal-box--frame {
+				max-width: calc(var(--stk-main-width) + 16px);
+			}
+			&.modal-box--paddingnone {
+				max-width: var(--stk-main-width);
+			}
+		}
+	}
+	// 大きめ
+	@media only screen and (min-width: 1167px) {
+		&.modal-size--large {
+			&:not(.modal-box--paddingnone):not(.modal-box--frame) {
+				max-width: calc(var(--stk-wrap-width) + 64px);
+			}
+			&.modal-box--frame {
+				max-width: calc(var(--stk-wrap-width) + 16px);
+			}
+			&.modal-box--paddingnone {
+				max-width: var(--stk-wrap-width);
+			}
+		}
+	}
+}
+
+// ワイドページの場合
+@media only screen and (min-width: 981px) {
+	body:not(.page-template-default,.post-template-default,.post-template-single-viral) {
+		.remodal {
+			&.modal-size--medium {
+				&:not(.modal-box--paddingnone):not(.modal-box--frame) {
+					max-width: calc(var(--stk-wide-width) + 64px);
+				}
+				&.modal-box--frame {
+					max-width: calc(var(--stk-wide-width) + 16px);
+				}
+				&.modal-box--paddingnone {
+					max-width: var(--stk-wide-width);
+				}
+			}
+		}
+	}
+}

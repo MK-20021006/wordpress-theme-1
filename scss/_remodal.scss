@@ -1,0 +1,177 @@
+// ==================================================
+// js remodal style
+// ==================================================
+
+html.remodal-is-locked {
+	overflow: hidden;
+	touch-action: none;
+}
+.remodal,
+[data-remodal-id] {
+	display: none;
+}
+
+.remodal-overlay {
+	position: fixed;
+	z-index: 9999;
+	top: -5000px;
+	right: -5000px;
+	bottom: -5000px;
+	left: -5000px;
+	display: none;
+	background: rgba(43, 46, 56, 0.9);
+}
+.remodal-wrapper {
+	position: fixed;
+	z-index: 11000;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+	text-align: center;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+
+	&::after {
+		display: inline-block;
+		height: 100%;
+		margin-left: -0.05em;
+		content: "";
+	}
+}
+
+
+.remodal {
+	position: relative;
+	outline: none;
+	width: 100%;
+	max-width: 700px;
+	color: var(--side-text-color);
+	background: var(--inner-content-bg);
+	text-align: left;
+
+	@media only screen and (max-width: 480px) {
+		font-size: .88em;
+	}
+}
+.remodal-is-initialized {
+	// Disable Anti-FOUC
+	display: inline-block;
+}
+
+
+.remodal-bg.remodal-is-opening,
+.remodal-bg.remodal-is-opened {
+	filter: blur(3px);
+}
+.remodal-overlay.remodal-is-opening,
+.remodal-overlay.remodal-is-closing,
+.remodal.remodal-is-opening,
+.remodal.remodal-is-closing {
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+.remodal-overlay.remodal-is-opening {
+	animation-name: fadeIn;
+}
+.remodal-overlay.remodal-is-closing {
+	animation-name: fadeIn;
+	animation-direction: reverse;
+}
+
+.remodal.remodal-is-opening {
+	animation-name: remodal-opening;
+	&.--modeleft {
+		animation-name: remodal-opening-left;
+	}
+}
+.remodal.remodal-is-closing {
+	animation-name: remodal-closing;
+	&.--modeleft {
+		animation-name: remodal-opening-left;
+		animation-direction: reverse;
+	}
+}
+#navbtn_menu_content,
+#navbtn_search_content,
+#navbtn_sns_content {
+	width: calc(100% - 40px);
+	margin: 10px 20px;
+}
+#navbtn_menu_content {
+	padding: clamp(0.5em, 2%, 1em);
+	&.--modeleft {
+		margin: 0!important;
+		position: absolute;
+		top: 0;
+		left: 0;
+		min-height: 100%;
+	}
+}
+#navbtn_search_content,
+#navbtn_sns_content {
+	background: none;
+	color: #fff;
+}
+
+.remodal,
+.remodal-wrapper:after {
+	vertical-align: middle;
+}
+.remodal .widget {
+	margin: 0 0 1em;
+}
+.remodal-close {
+	display: flex;
+	align-items: center;
+	margin: 1em auto;
+	padding: .5em;
+	cursor: pointer;
+	transition: opacity 0.2s;
+	color: currentColor;
+	background: none;
+	font-size: 1.2em;
+
+	&:not(:hover):not(:focus){
+		opacity: 0.5;
+	}
+	.svgicon_close {
+		width: 1.2em;
+	}
+}
+
+
+.remodal-close::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+@keyframes remodal-opening {
+	from {
+		transform: scale(1.05);
+		opacity: 0;
+	}
+	to {
+		transform: none;
+		opacity: 1;
+	}
+}
+@keyframes remodal-opening-left {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes remodal-closing {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		transform: scale(0.95);
+		opacity: 0;
+	}
+}

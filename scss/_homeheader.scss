@@ -1,0 +1,234 @@
+// toppage header
+
+#custom_header {
+	text-align: center;
+
+	.wp-block-cover__inner-container {
+		// padding: 13% 4% 12%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		max-width: 1166px;
+	}
+	.en {
+		font-size: 240%;
+		font-size: clamp(28px, 6vw, 45px);
+		margin-bottom: 0.375em;
+	}
+	.ja {
+		font-size: 85%;
+		font-size: clamp(12px, 1.5vw, 15px);
+		font-weight: 700;
+		margin: 0 1em 1.5em;
+	}
+	.wp-block-button {
+		margin: 0 auto;
+		@media only screen and (max-width: 480px) {
+			font-size: 90%;
+		}
+	}
+	.wp-block-button__link {
+		width: 340px;
+		//border: none;
+	}
+
+	@media only screen and (min-width: 768px) {
+		.stk_custom_header__text {
+			width: 100%;
+			max-width: 600px;
+		}
+		&.textleft .wp-block-cover__inner-container {
+			justify-content: flex-start;
+		}
+		&.textright .wp-block-cover__inner-container {
+			justify-content: flex-end;
+		}
+	}
+}
+#custom_header_img {
+	text-align: center;
+	font-size: 0;
+
+	img {
+		margin: -1px auto 0;
+	}
+}
+
+// pickup content
+#main-pickup_content {
+	margin: 1em auto;
+
+	@media (min-width: 768px) and (max-width: 1166px) {
+		margin: 1em;
+	}
+}
+
+#top_carousel:not(.slide_style-overlay) + .pickup_content {
+	margin-top: 35px;
+}
+
+@media only screen and (min-width: 981px) {
+	[id^="custom_header"] + #main-pickup_content,
+	#top_carousel.slide_style-overlay + #main-pickup_content {
+		margin-top: 35px;
+	}
+}
+
+.pickup_content {
+	max-width: var(--stk-wrap-width, 1166px);
+
+	.pickup_content__img {
+		margin: 0;
+		padding: 0;
+		border: none;
+
+		&[class*="--sizeratio-"] {
+			aspect-ratio: 16/9;
+			object-fit: cover;
+		}
+		&.--sizeratio-square {
+			aspect-ratio: 1;
+		}
+		&.--sizeratio-standard {
+			aspect-ratio: 4/3;
+		}
+		&.--sizeratio-classic {
+			aspect-ratio: 3/2;	
+		}
+	}
+}
+
+.pickup_content__ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	gap: 1em;
+}
+
+li.pickup_content__li {
+	width: 33%;
+	padding: 0;
+	position: relative;
+
+	&::before,
+	&::after {
+		content: none!important;
+	}
+}
+
+.pickup_content__link {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+
+	&:hover {
+		color: #fff;
+	}
+	&::before,
+	&::after {
+		position: absolute;
+		z-index: 2;
+		content: "";
+		display: inline-block;
+		width: 2em;
+		height: 2em;
+		border-color: #fff;
+		border-width: 1px;
+	}
+	&::before {
+		border-top-style: solid;
+		border-left-style: solid;
+		top: 5px;
+		left: 5px;
+	}
+	&::after {
+		border-bottom-style: solid;
+		border-right-style: solid;
+		bottom: 5px;
+		right: 5px;
+	}
+}
+
+.pickup_content__text {
+	position: absolute;
+	font-size: 80%;
+	font-weight: 700;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: rgba($color: #000, $alpha: 0.4);
+}
+
+.pickup_content__text__label {
+	border-radius: 2em;
+	padding: 0.5em 1em;
+	text-align: center;
+	line-height: 1.2;
+	min-width: 50%;
+	max-width: 85%;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 0 0 1px rgba($color: #fff, $alpha: 0.75);
+	text-shadow: 0 0 3px rgba($color: #000, $alpha: 0.25);
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background: rgba($color: #fff, $alpha: 0.25);
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.pickup_content__link:hover {
+		box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+
+		.pickup_content__text__label {
+			box-shadow: 0 0 7px 5px;
+		}
+
+		&::before,
+		&::after {
+			width: 3em;
+			height: 3em;
+		}
+	}
+
+	#sidebar1 {
+		.pickup_content__ul {
+			flex-wrap: wrap;
+		}
+		.pickup_content__li {
+			width: calc(50% - 0.5em);
+		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#main-pickup_content {
+		margin: 4%;
+	}
+	.pickup_content__ul {
+		flex-wrap: wrap;
+	}
+	li.pickup_content__li {
+		width: calc(50% - 0.5em);
+	}
+	.pickup_content__text {
+		font-size: 60%;
+	}
+}
